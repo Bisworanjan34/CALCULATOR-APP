@@ -7,20 +7,7 @@ let Calculator=()=>{
     let toggle=useRef()
     let calRef=useRef()
     let [show,setShow]=useState(false)
-    // let showValue = (e) => {
-    //     const value = e.target.value;
-        
-    //     if (value === '%') {
-    //       // Handle percentage calculation
-    //       setState((prevState) => {
-    //         // Evaluate the current expression and divide the result by 100
-    //         let result = prevState ? eval(prevState) / 100 : '';
-    //         return result.toString();
-    //       });
-    //     } else {
-    //       setState(state + value);
-    //     }
-    //   };
+   
     let showValue = (e) => {
       const value = e.target.value;
 
@@ -31,12 +18,10 @@ let Calculator=()=>{
               if (match) {
                   let lhs = parseFloat(match[1]);
                   let operator = match[3];
-                  let rhs = parseFloat(match[4]);
-
-                  // Calculate percentage based on the right-hand side (rhs)
+                  let rhs = parseFloat
                   let percentageValue = lhs * (rhs / 100);
 
-                  // Replace the expression with the evaluated percentage expression
+                
                   return prevState.replace(match[0], `${lhs}${operator}${percentageValue}`);
               }
 
